@@ -1,14 +1,14 @@
 class CombatSports::CLI
 
-    def run
-    #    CombatSports::Scraper.scrape 
+    def call
+        CombatSports::Scraper.new
         prompt_user_input
     end
 
     private
 
     def prompt_user_input
-        puts "BEST RATED MMA GYMS IN THE WORLD!\n"\
+        puts "Find the Best MMA Gym Near You!\n"\
             "Type in 'location' to get a list of where they are all located.\n"\
             "Type in 'specialty' to get a list of what each gym specializes in (Muay Thai, BJJ, etc.).\n"\
             "Type in 'coach' to get a list of the coaches at each gym.\n"\
