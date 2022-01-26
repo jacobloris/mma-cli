@@ -17,6 +17,9 @@ PLATFORMS
 DEPENDENCIES
   combat_sports!
   rake (~> 13.0)
+  nokogiri
+  pry
+  rspec
 
 BUNDLED WITH
    2.3.5
