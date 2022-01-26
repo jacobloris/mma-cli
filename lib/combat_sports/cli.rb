@@ -1,5 +1,4 @@
-require CombatSports
-class CombatSports::CLI
+class CLI
 
     def call
         CombatSports::Scraper.new
@@ -17,3 +16,4 @@ class CombatSports::CLI
             "Type in 'exit!' to quit."
     end
 end
+

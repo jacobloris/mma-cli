@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "combat_sports/version"
+require 'nokogiri'
+  require 'open-uri'
+  require 'pry'
 
-module CombatSports
-  class Error < StandardError; end
-  # Your code goes here...
-end
+  require_relative "./combat_sports/version"
+  require_relative "combat_sports/scraper"
+  require_relative "combat_sports/gym"
+  require_relative "combat_sports/cli"
+
+

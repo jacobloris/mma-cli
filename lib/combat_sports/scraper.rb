@@ -1,4 +1,4 @@
-class CombatSports::Scraper
+class Scraper
 
     def get_page
         doc = Nokogiri::HTML(open('https://martialarts-hq.com/the-top-11-mma-gyms-in-the-world/'))
@@ -15,6 +15,7 @@ class CombatSports::Scraper
         end
     end
 end
+
 
 
 
