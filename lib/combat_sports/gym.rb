@@ -1,15 +1,14 @@
 class CombatSports::Gym 
 
-    attr_accessor :name, :location, :coach, :fighters, :specialty
+    attr_accessor :name, :description, :coach, :fighters, :specialty
 
     @@all = []
 
-    def initialize(name=nil, location=nil, coach=nil, fighters=nil, specialty=nil)
+    def initialize(name=nil, description=nil, coach=nil, fighters=nil)
         @name = name
-        @location = location
+        @description = description
         @coach = coach
         @fighters = fighters
-        @specialty = specialty
         @@all << self
     end
 

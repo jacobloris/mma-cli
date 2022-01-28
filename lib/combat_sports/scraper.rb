@@ -2,29 +2,32 @@ require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
+#require_relative './gym.rb'
+
 class Scraper
 
     def get_page 
-        doc = Nokogiri::HTML(open('https://martialarts-hq.com/the-top-11-mma-gyms-in-the-world/'))
-    #    binding.pry
+        doc = Nokogiri::HTML(open("https://martialarts-hq.com/the-top-11-mma-gyms-in-the-world"))
+        
+        binding.pry
     end
    
 
-    def scrape_gym_index
-        self.get_page.css("<h3 class="elementor-heading-title elementor-size-default">1. Jackson Wink MMA</h3>")
-    end
+    #def get_gyms
+     #   self.get_page(".div")
+    #end
 
-    #def create_gyms
-     #   scrape_gym_index.each do |r|
-      #      CombatSports::Gym.new_from_index_page(r)
-       # end
+   # def make_gym
+        #self.get_gyms.each do |div|
+         #   gym = Gym.new
+          #  gym.title = doc.css("h3").text
+           # gym.description = doc.css("span").text
+        #end
     #end
 end
+
 
 Scraper.new.get_page
 
 
 
-
-
-# RUNNING INTO ERROR lib/combat_sports/scraper.rb:2:in `<main>': uninitialized constant CombatSports (NameError) GOOGLE HOW TO FIX
