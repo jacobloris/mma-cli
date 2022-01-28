@@ -1,20 +1,27 @@
+require 'pry'
+require 'nokogiri'
+require 'open-uri'
+
 class Scraper
 
-    def get_page
+    def get_page 
         doc = Nokogiri::HTML(open('https://martialarts-hq.com/the-top-11-mma-gyms-in-the-world/'))
+    #    binding.pry
     end
-
+   
 
     def scrape_gym_index
-        self.get_page.css("//*[@id='content']/div/div/div/section[1]/div/div/div[1]/div/div/div[4]/div/div/div/div/section[1]/div/div/div/div/div/div[2]/div/h2")
+        self.get_page.css("<h3 class="elementor-heading-title elementor-size-default">1. Jackson Wink MMA</h3>")
     end
 
-    def create_gyms
-        scrape_gym_index.each do |r|
-            CombatSports::Gym.new_from_index_page(r)
-        end
-    end
+    #def create_gyms
+     #   scrape_gym_index.each do |r|
+      #      CombatSports::Gym.new_from_index_page(r)
+       # end
+    #end
 end
+
+Scraper.new.get_page
 
 
 

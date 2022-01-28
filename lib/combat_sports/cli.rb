@@ -1,4 +1,4 @@
-class CLI
+class CombatSports::CLI
 
     def call
         CombatSports::Scraper.new
