@@ -1,3 +1,5 @@
+require_relative './version.rb'
+
 class CombatSports::CLI
 
     def call
@@ -16,4 +18,6 @@ class CombatSports::CLI
             "Type in 'exit!' to quit."
     end
 end
+
+CombatSports::CLI.new
 

@@ -1,6 +1,8 @@
-class CombatSports::Gym 
+require_relative './version.rb'
 
-    attr_accessor :name, :description, :coach, :fighters, :specialty
+class Gym 
+
+    attr_accessor :name, :description, :coach, :fighters
 
     @@all = []
 
@@ -10,11 +12,23 @@ class CombatSports::Gym
         @coach = coach
         @fighters = fighters
         @@all << self
+        end
     end
 
     def self.all
         @@all
     end
 
+    def save
+        @@all << self
+    end
 
+    def self.list_by_name(user_input)
+        all.select do |name|
+    end
 end
+
+Gym.new
+
+
+
