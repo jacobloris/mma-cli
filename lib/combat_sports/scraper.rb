@@ -16,7 +16,7 @@ class Scraper
 
     def get_gyms
         #binding.pry
-        self.get_page.css(".elementor-widget-wrap")
+        self.get_page.css(".elementor-text-editor")
     end
 
     def make_gym
@@ -25,7 +25,7 @@ class Scraper
             puts " #{counter} #{doc} "
             counter = counter + 1
             gym = Gym.new
-            gym.name = doc.css("h3").text
+            gym.name = doc.css(".elementor").text
             gym.description = doc.css("span").text
         end
     end
