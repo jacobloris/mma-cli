@@ -20,12 +20,15 @@ class Scraper
     end
 
     def make_gym
-        counter = 1
+        counter = 0
         self.get_gyms.each do |doc|
-            puts " #{counter} #{doc} "
-            counter = counter + 1
+
+            puts "#{r} #{counter}"
+    
+            counter += 1
+
             gym = Gym.new
-            gym.name = doc.css(".elementor").text
+            gym.name = doc.css(".elementor-text-editor").first.css("h3").text.strip
             gym.description = doc.css("span").text
         end
     end
